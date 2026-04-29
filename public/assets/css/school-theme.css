@@ -1,0 +1,523 @@
+/*
+ * ============================================================
+ *  DIVINE ROYAL INT'L COLLEGE — Brand Theme Override
+ *  Primary : #2A2567  (deep navy)
+ *  Accent  : #F4BC67  (warm gold)
+ * ============================================================
+ */
+
+/* ── 1. CSS VARIABLE OVERRIDES ── */
+:root {
+  /* Navy primary palette */
+  --primary-50 : #F0EFFE;
+  --primary-100: rgba(42, 37, 103, 0.10);
+  --primary-200: #BDBAD8;
+  --primary-300: #8A87BF;
+  --primary-400: #5A56A5;
+  --primary-500: #3B3688;
+  --primary-600: #2A2567;
+  --primary-700: #1F1B4F;
+  --primary-800: #151238;
+  --primary-900: #0D0B24;
+
+  /* Gold accent */
+  --gold        : #F4BC67;
+  --gold-dark   : #D9A045;
+  --gold-light  : rgba(244, 188, 103, 0.15);
+  --gold-faint  : rgba(244, 188, 103, 0.08);
+
+  /* Sidebar-specific tokens */
+  --sidebar-bg         : #ffffff;
+  --sidebar-hover-bg   : rgba(42, 37, 103, 0.07);
+  --sidebar-active-bg  : #2A2567;
+  --sidebar-active-text: #ffffff;
+  --sidebar-text       : #3D3A6B;
+  --sidebar-text-dim   : #9896B5;
+  --sidebar-border     : #EDEEF8;
+  --sidebar-group-color: #F4BC67;
+}
+
+/* ── 2. SIDEBAR SHELL ── */
+.sidebar {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.sidebar-menu-area {
+  background-color: var(--sidebar-bg);
+  border-inline-end-color: var(--sidebar-border) !important;
+}
+
+.sidebar-logo {
+  border-inline-end-color: var(--sidebar-border) !important;
+  border-block-end-color : var(--sidebar-border) !important;
+}
+
+.sidebar-close-btn {
+  color       : #2A2567;
+  border-color: #EDEEF8;
+}
+
+/* ── 3. SIDEBAR SCROLLBAR ── */
+.sidebar-menu-area::-webkit-scrollbar { background-color: transparent; }
+.sidebar-menu-area::-webkit-scrollbar-thumb,
+.sidebar-menu-area:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(42, 37, 103, 0.15);
+}
+
+/* ── 4. PROFILE DROPDOWN (inside sidebar) ── */
+.profile-dropdown__button {
+  background-color: #F5F4FA !important;
+}
+.sidebar .text-primary-light   { color: #2A2567 !important; }
+.sidebar .text-secondary-light { color: #7B79A0 !important; }
+.profile-dropdown__icon .ri-arrow-right-s-line { color: #9896B5; }
+
+/* ── 5. NAV LINKS ── */
+.sidebar-menu li a {
+  color: var(--sidebar-text);
+}
+.sidebar-menu li a:hover {
+  color           : #2A2567;
+  background-color: var(--sidebar-hover-bg);
+}
+
+/* ── 6. ACTIVE PAGE ITEM ── */
+.sidebar-menu li > a.active-page,
+.sidebar-menu li > a.active-page:hover {
+  background-color: var(--sidebar-active-bg) !important;
+  color           : var(--sidebar-active-text) !important;
+  font-weight     : 600;
+}
+.sidebar-menu li > a.active-page i,
+.sidebar-menu li > a.active-page span {
+  color: var(--sidebar-active-text) !important;
+}
+
+/* ── 7. OPEN DROPDOWN PARENT ── */
+.sidebar-menu li.dropdown.open > a,
+.sidebar-menu li.dropdown.dropdown-open > a {
+  background-color: rgba(42, 37, 103, 0.08) !important;
+  color           : #2A2567 !important;
+}
+.sidebar-menu li.dropdown.open > a:hover,
+.sidebar-menu li.dropdown.dropdown-open > a:hover {
+  color: #2A2567 !important;
+}
+
+/* ── 8. GROUP TITLES ── */
+.sidebar-menu .sidebar-menu-group-title {
+  color         : var(--sidebar-group-color);
+  font-size     : 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight   : 700;
+}
+
+/* ── 9. SUBMENU ── */
+.sidebar-menu .sidebar-submenu li a {
+  color: #7B79A0;
+}
+.sidebar-menu .sidebar-submenu li a:hover {
+  color: #2A2567;
+}
+.sidebar-menu .sidebar-submenu li.active-page a {
+  color           : #2A2567 !important;
+  background-color: transparent !important;
+  font-weight     : 600;
+}
+.sidebar-menu .sidebar-submenu li.active-page a .circle-icon {
+  color: #2A2567;
+}
+.sidebar-submenu::before {
+  border-color: rgba(42, 37, 103, 0.15);
+}
+.sidebar-submenu .circle-icon {
+  color     : #BDBAD8;
+  background: #ffffff;
+  box-shadow: 0 0 0 8px #ffffff;
+}
+
+/* ── 10. TOPBAR ── */
+.navbar-header {
+  background-color: #ffffff;
+  border-bottom   : 1px solid #EDEEF8;
+  box-shadow      : 0 1px 12px rgba(42, 37, 103, 0.07) !important;
+}
+
+/* ── 11. PRIMARY BUTTONS ── */
+.btn-primary {
+  background-color: #2A2567;
+  border-color    : #2A2567;
+  color           : #ffffff;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus-visible,
+.btn-check:checked + .btn-primary {
+  background-color: #1F1B4F;
+  border-color    : #1F1B4F;
+  color           : #ffffff;
+}
+
+.btn-outline-primary {
+  color       : #2A2567;
+  border-color: #2A2567;
+}
+.btn-outline-primary:hover {
+  background-color: #2A2567;
+  border-color    : #2A2567;
+  color           : #ffffff;
+}
+
+/* ── 12. UTILITY CLASS OVERRIDES ── */
+.bg-primary-600       { background-color: #2A2567 !important; }
+.bg-primary-500       { background-color: #3B3688 !important; }
+.bg-primary-100       { background-color: rgba(42, 37, 103, 0.10) !important; }
+.bg-primary-50        { background-color: #F0EFFE !important; }
+
+.text-primary-600     { color: #2A2567 !important; }
+.text-primary-500     { color: #3B3688 !important; }
+
+.border-primary       { border-color: #2A2567 !important; }
+
+/* ── 13. BADGE STYLES ── */
+.badge.bg-primary-100.text-primary-600 {
+  background-color: rgba(42, 37, 103, 0.10) !important;
+  color           : #2A2567 !important;
+}
+
+/* ── 14. CARD HEADER ACCENTS ── */
+.card .card-header {
+  border-bottom: 1px solid #EDEEF8;
+}
+
+/* ── 15. FOCUS RINGS ── */
+.form-control:focus,
+.form-select:focus {
+  border-color: #2A2567;
+  box-shadow  : 0 0 0 0.2rem rgba(42, 37, 103, 0.18);
+}
+
+/* ── 16. ACTIVE TAB / NAV PILLS ── */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #2A2567;
+  color           : #ffffff;
+}
+.nav-tabs .nav-link.active {
+  color       : #2A2567;
+  border-color: #2A2567 transparent transparent;
+}
+
+/* ── 17. TABLE HEAD ACCENT ── */
+.table thead.bg-neutral-50 th {
+  background-color: #F5F4FA !important;
+  color           : #2A2567;
+  font-weight     : 600;
+}
+
+/* ── 18. ALERT SUCCESS / INFO USING BRAND TONES ── */
+.alert-success {
+  background-color: rgba(0, 195, 29, 0.08);
+  border-color    : rgba(0, 195, 29, 0.25);
+}
+
+/* ── 19. GOLD ACCENT TOUCHES ── */
+/* Topbar notification bell */
+.navbar-header .iconify-icon[icon="iconoir:bell"] {
+  color: #2A2567;
+}
+
+/* Breadcrumb title */
+.breadcrumb h6 {
+  color: #2A2567;
+}
+
+/* Card shadow colored slightly navy */
+.card.shadow-1 {
+  box-shadow: 0 4px 24px rgba(42, 37, 103, 0.07) !important;
+}
+
+/* Score status dot & info badge: reuse gold for 'approved' */
+.bg-warning-100 { background-color: rgba(244, 188, 103, 0.15) !important; }
+.text-warning-600,
+.text-warning-700 { color: #C08D2A !important; }
+
+/* ── 20. DARK THEME SIDEBAR ADJUSTMENT ── */
+[data-theme=dark] .sidebar,
+[data-theme=dark] .sidebar-menu-area {
+  background-color: #1E1C2E !important;
+}
+[data-theme=dark] .sidebar-logo {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+[data-theme=dark] .sidebar-menu li a           { color: rgba(255, 255, 255, 0.72); }
+[data-theme=dark] .sidebar-menu li a:hover     { color: #F4BC67; background-color: rgba(244,188,103,0.10); }
+[data-theme=dark] .sidebar-menu li > a.active-page,
+[data-theme=dark] .sidebar-menu li > a.active-page:hover {
+  background-color: #2A2567 !important;
+  color: #ffffff !important;
+}
+[data-theme=dark] .sidebar-menu .sidebar-submenu li a         { color: rgba(255,255,255,0.55); }
+[data-theme=dark] .sidebar-menu .sidebar-submenu li a:hover   { color: #F4BC67; }
+[data-theme=dark] .sidebar-menu .sidebar-submenu li.active-page a { color: #F4BC67 !important; }
+[data-theme=dark] .sidebar-menu .sidebar-menu-group-title     { color: rgba(244,188,103,0.65); }
+[data-theme=dark] .sidebar-menu li.dropdown.open > a,
+[data-theme=dark] .sidebar-menu li.dropdown.dropdown-open > a { background-color: rgba(244,188,103,0.12) !important; color: #F4BC67 !important; }
+[data-theme=dark] .profile-dropdown__button    { background-color: rgba(255,255,255,0.07) !important; }
+[data-theme=dark] .sidebar .text-primary-light { color: #ffffff !important; }
+[data-theme=dark] .sidebar .text-secondary-light { color: rgba(255,255,255,0.55) !important; }
+[data-theme=dark] .sidebar-submenu .circle-icon {
+  background: #1E1C2E;
+  box-shadow : 0 0 0 8px #1E1C2E;
+}
+
+/* ── 25. DARK THEME — GLOBAL CONTENT OVERRIDES ── */
+
+/* Topbar: our school-theme hardcodes white; fix for dark mode */
+[data-theme=dark] .navbar-header {
+  background-color: #1E1C2E !important;
+  border-bottom   : 1px solid rgba(255, 255, 255, 0.07) !important;
+  box-shadow      : 0 1px 12px rgba(0, 0, 0, 0.35) !important;
+}
+[data-theme=dark] .sidebar-toggle,
+[data-theme=dark] .sidebar-mobile-toggle {
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* Cards */
+[data-theme=dark] .card.shadow-1 {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.30) !important;
+}
+[data-theme=dark] .card .card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Primary colour text — dark navy is invisible on dark bg; use light lavender */
+[data-theme=dark] .text-primary-600 { color: #A8A5D9 !important; }
+[data-theme=dark] .text-primary-500 { color: #9896B5 !important; }
+
+/* Primary tint backgrounds — increase opacity so badges are visible */
+[data-theme=dark] .bg-primary-100 {
+  background-color: rgba(168, 165, 217, 0.16) !important;
+}
+[data-theme=dark] .bg-primary-50 {
+  background-color: rgba(168, 165, 217, 0.08) !important;
+}
+[data-theme=dark] .bg-primary-600 {
+  background-color: #3B3688 !important;
+}
+
+/* Primary badge (bg-primary-100 + text-primary-600 combo) */
+[data-theme=dark] .badge.bg-primary-100.text-primary-600 {
+  background-color: rgba(168, 165, 217, 0.18) !important;
+  color           : #A8A5D9 !important;
+}
+
+/* Warning/gold colours — make gold brighter, bg more visible */
+[data-theme=dark] .bg-warning-100 {
+  background-color: rgba(244, 188, 103, 0.20) !important;
+}
+[data-theme=dark] .text-warning-600,
+[data-theme=dark] .text-warning-700 {
+  color: #F4BC67 !important;
+}
+
+/* Table header — replace blinding white bg with subtle dark tint */
+[data-theme=dark] .table thead.bg-neutral-50 th {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color           : #A8A5D9 !important;
+  border-bottom   : 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Form focus ring — gold accent instead of invisible dark navy */
+[data-theme=dark] .form-control:focus,
+[data-theme=dark] .form-select:focus {
+  border-color: #F4BC67 !important;
+  box-shadow  : 0 0 0 0.2rem rgba(244, 188, 103, 0.20) !important;
+}
+
+/* Outlined primary button — navy outline invisible on dark bg */
+[data-theme=dark] .btn-outline-primary {
+  color       : #A8A5D9 !important;
+  border-color: #A8A5D9 !important;
+}
+[data-theme=dark] .btn-outline-primary:hover {
+  background-color: #3B3688 !important;
+  border-color    : #3B3688 !important;
+  color           : #ffffff !important;
+}
+
+/* Form section titles & dividers */
+[data-theme=dark] .form-section-title {
+  color: #A8A5D9 !important;
+}
+[data-theme=dark] .form-section-title::after {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Form-teacher toggle */
+[data-theme=dark] .form-teacher-toggle {
+  background  : rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+[data-theme=dark] .form-teacher-toggle:has(input:checked) {
+  border-color    : #F4BC67 !important;
+  background-color: rgba(244, 188, 103, 0.10) !important;
+}
+[data-theme=dark] .form-teacher-toggle .toggle-icon {
+  background-color: rgba(168, 165, 217, 0.15) !important;
+  color           : #A8A5D9 !important;
+}
+[data-theme=dark] .form-teacher-toggle:has(input:checked) .toggle-icon {
+  background-color: #F4BC67 !important;
+  color           : #1B2431 !important;
+}
+
+/* Assignment chips */
+[data-theme=dark] .chip-label .chip-text {
+  background  : rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  color       : rgba(255, 255, 255, 0.72) !important;
+}
+[data-theme=dark] .chip-label:hover .chip-text {
+  border-color    : #F4BC67 !important;
+  background-color: rgba(244, 188, 103, 0.12) !important;
+  color           : #F4BC67 !important;
+}
+[data-theme=dark] .chip-label input:checked + .chip-text {
+  background-color: #3B3688 !important;
+  border-color    : #5A56A5 !important;
+  color           : #ffffff !important;
+  box-shadow      : 0 2px 8px rgba(0, 0, 0, 0.30) !important;
+}
+
+/* Border accent */
+[data-theme=dark] .border-primary {
+  border-color: #5A56A5 !important;
+}
+
+/* ── 21. STAT CARDS: gold top-border accent ── */
+.dashboard-main-body .card.shadow-1.radius-8:has(.iconify-icon) {
+  border-top: 3px solid transparent;
+}
+
+/* ── 22. SIDEBAR TOGGLE (collapse icon) ── */
+.sidebar-toggle,
+.sidebar-mobile-toggle {
+  color: #2A2567;
+}
+
+/* ── 23. PAGE HEADER SUBTITLE ── */
+.breadcrumb .text-neutral-600 {
+  color: #6B6B8D !important;
+}
+
+/* ── 24. ASSIGNMENT CHIP CHECKBOXES ── */
+.chip-label {
+  display    : inline-flex;
+  align-items: center;
+  cursor     : pointer;
+  user-select: none;
+}
+.chip-label input[type="checkbox"] {
+  position: absolute;
+  opacity : 0;
+  width   : 0;
+  height  : 0;
+  pointer-events: none;
+}
+.chip-label .chip-text {
+  display        : inline-flex;
+  align-items    : center;
+  gap            : 6px;
+  padding        : 6px 14px;
+  border         : 1.5px solid #BDBAD8;
+  border-radius  : 7px;
+  font-size      : 0.8125rem;
+  font-weight    : 500;
+  color          : #3D3A6B;
+  background     : #ffffff;
+  transition     : background 0.14s, border-color 0.14s, color 0.14s, box-shadow 0.14s;
+  white-space    : nowrap;
+}
+.chip-label .chip-text .chip-check-icon {
+  display  : none;
+  font-size: 0.75rem;
+}
+.chip-label:hover .chip-text {
+  border-color    : #2A2567;
+  background-color: #F0EFFE;
+  color           : #2A2567;
+}
+.chip-label input:checked + .chip-text {
+  background-color: #2A2567;
+  border-color    : #2A2567;
+  color           : #ffffff;
+  font-weight     : 600;
+  box-shadow      : 0 2px 8px rgba(42,37,103,0.22);
+}
+.chip-label input:checked + .chip-text .chip-check-icon {
+  display: inline;
+}
+
+/* Chip grid wrapper */
+.chip-grid {
+  display  : flex;
+  flex-wrap: wrap;
+  gap      : 8px;
+}
+
+/* Section divider inside card */
+.form-section-title {
+  display        : flex;
+  align-items    : center;
+  gap            : 10px;
+  font-size      : 0.8125rem;
+  font-weight    : 700;
+  text-transform : uppercase;
+  letter-spacing : 0.06em;
+  color          : #2A2567;
+  margin-bottom  : 0;
+}
+.form-section-title::after {
+  content   : '';
+  flex      : 1;
+  height    : 1px;
+  background: #EDEEF8;
+}
+
+/* Form teacher toggle styling */
+.form-teacher-toggle {
+  display        : flex;
+  align-items    : center;
+  gap            : 12px;
+  padding        : 12px 16px;
+  border         : 1.5px solid #EDEEF8;
+  border-radius  : 8px;
+  background     : #F8F8FD;
+  cursor         : pointer;
+  user-select    : none;
+  transition     : border-color 0.15s, background 0.15s;
+}
+.form-teacher-toggle:has(input:checked) {
+  border-color    : #2A2567;
+  background-color: #F0EFFE;
+}
+.form-teacher-toggle .toggle-icon {
+  width           : 36px;
+  height          : 36px;
+  border-radius   : 8px;
+  background-color: rgba(42,37,103,0.10);
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  color           : #2A2567;
+  font-size       : 1.1rem;
+  flex-shrink     : 0;
+}
+.form-teacher-toggle:has(input:checked) .toggle-icon {
+  background-color: #2A2567;
+  color           : #ffffff;
+}

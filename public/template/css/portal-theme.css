@@ -1,0 +1,129 @@
+/*
+ * Portal Theme Override
+ * Replaces Educeet template default colors with project color scheme.
+ * Load this file LAST in the stylesheet stack so it wins over main.css.
+ *
+ * Project palette:
+ *   Primary  : #2A2567  (deep purple)
+ *   Accent   : #F4BC67  (warm gold)
+ *   Purple-2 : #3d3499  (medium purple — hover / secondary elements)
+ *   Purple-3 : #6e6aa8  (muted purple — subtle backgrounds)
+ */
+
+/* ── 1. CSS variable overrides ─────────────────────────────────────── */
+:root {
+  --it-theme-1: #2A2567;   /* was #03594E  dark green  → deep purple   */
+  --it-theme-2: #F4BC67;   /* was #F8C62F  bright gold → warm gold     */
+  --it-theme-3: #3d3499;   /* was #1AB69D  teal        → medium purple */
+  --it-theme-4: #6e6aa8;   /* was #618269  muted green → muted purple  */
+  --bs-breadcrumb-divider: "/";
+}
+
+/* ── 2. Hardcoded #2F57EF (blue) → #2A2567 (purple) ───────────────── */
+.it-categories-item.item-style-2 {
+  border-color: #2A2567;
+}
+.it-categories-item.item-style-2 span svg {
+  color: #2A2567;
+}
+.it-categories-item.item-style-5 {
+  border-color: #2A2567;
+}
+.it-categories-item.item-style-5 span svg {
+  color: #2A2567;
+}
+.it-categories-3-item.style-3 {
+  background-color: #2A2567;
+}
+
+/* ── 3. Hardcoded #F8C62F (yellow) → #F4BC67 (gold) ───────────────── */
+.it-categories-item.item-style-2 {
+  background-color: #F4BC67;
+}
+
+/* ── 4. Active nav item (current page) ─────────────────────────────── */
+.it-header-menu > nav > ul > li.it-current > a {
+  color: var(--it-theme-1);
+}
+
+/* ── 5. it-btn-yellow uses theme-2 (our gold) ──────────────────────── */
+.it-btn-yellow {
+  background-color: var(--it-theme-2);
+}
+
+/* ── 6. Footer widget title — stays dark (light-bg footer) ─────────── */
+/* base main.css already sets color: var(--it-common-black) — no override needed */
+
+/* ── 7. Footer contact span labels ─────────────────────────────────── */
+.it-footer-widget-contact ul li span {
+  color: var(--it-theme-1);
+}
+
+/* ── 8. Dark photo breadcrumb hero (custom — not in Educeet original) ── */
+.it-breadcrumb-dark {
+  position: relative;
+  padding: 100px 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #1a1f2e;
+}
+@media (max-width: 767px) {
+  .it-breadcrumb-dark { padding: 70px 0; }
+}
+.it-breadcrumb-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,31,46,.78);
+  z-index: 0;
+}
+.it-breadcrumb-dark > .container { position: relative; z-index: 1; }
+.it-breadcrumb-dark .it-breadcrumb-title {
+  color: #fff;
+  font-size: 2.6rem;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+@media (max-width: 767px) {
+  .it-breadcrumb-dark .it-breadcrumb-title { font-size: 1.9rem; }
+}
+.it-breadcrumb-dark .breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+.it-breadcrumb-dark .breadcrumb-item,
+.it-breadcrumb-dark .breadcrumb-item a {
+  color: rgba(255,255,255,.75);
+  font-size: .9rem;
+  text-decoration: none;
+}
+.it-breadcrumb-dark .breadcrumb-item.active { color: var(--it-theme-2); }
+.it-breadcrumb-dark .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255,255,255,.4);
+}
+
+/* ── 9. Breadcrumb separator — template hardcodes ordainit.com as content ── */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "/" !important;
+}
+
+/* ── 10. Feature cards — mobile 2×2 grid tightening ─────────────────── */
+@media (max-width: 575px) {
+  .it-feature-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 12px;
+  }
+  .it-feature-icon span {
+    margin-right: 0;
+    margin-bottom: 10px;
+    height: 52px;
+    width: 52px;
+    line-height: 52px;
+  }
+  .it-feature-content p { font-size: 11px; }
+  .it-feature-title { font-size: 16px; }
+}
