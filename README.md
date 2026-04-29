@@ -1,59 +1,155 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Divine Royal Int'l College Nkpor — School Portal
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured secondary school management web application built with Laravel for **Divine Royal Int'l College Nkpor, Anambra State**. The portal serves administrators, teachers, students/parents, and the general public through a unified platform.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Admin Panel
+- **Dashboard** — school-wide overview and statistics
+- **Student Management** — enrollment, profiles, class assignment
+- **Class & Subject Management** — JSS and SSS levels
+- **Academic Terms** — term/session configuration
+- **Score & Result Management** — approve/publish termly results
+- **Teacher Assignments** — assign teachers to subjects and classes
+- **Attendance Tracking** — student and staff attendance records
+- **Grading System** — configurable grading scales per school level (JSS/SSS)
+- **Score Weights** — custom weight configuration for score components
+- **Announcements** — school-wide notice board
+- **Gallery** — school photo gallery management
+- **News & Publications** — school news posts and publications management
+- **Hero Slides & Popup Notices** — homepage content management
+- **Contact Messages** — view and manage enquiries from the public
+- **Reports** — generate academic and administrative reports
+- **Activity Logs** — audit trail of all admin actions
+- **Backup** — database backup management
+- **School Settings** — configure school name, logo, contact info, etc.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Teacher Portal
+- **Dashboard** — class and subject overview
+- **Score Entry** — enter and manage student scores per subject/term
+- **Attendance** — mark class attendance
+- **Results** — view and print student results
+- **Announcements** — view school announcements
+- **Profile** — manage personal profile and signature
 
-## Learning Laravel
+### Public Website
+- Home page with hero slideshow and popup notices
+- About, Academics, Admissions, Staff, and Gallery pages
+- News & blog section
+- Contact form
+- **Public Result Checker** — parents/students can check published results online
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Authentication
+- Role-based access control: `admin`, `principal`, `teacher`
+- Forgot password / password reset
+- Secure session management
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Layer | Technology |
+|---|---|
+| Framework | Laravel 12 (PHP) |
+| Database | MySQL |
+| Frontend | Blade templates, Bootstrap, Vite |
+| Auth | Laravel built-in auth |
+| Server | Apache (XAMPP) |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## Getting Started
 
-## Contributing
+### Requirements
+- PHP >= 8.2
+- Composer
+- MySQL
+- Node.js & npm
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Installation
 
-## Code of Conduct
+```bash
+# 1. Clone the repository
+git clone https://github.com/emeldo39/sec-school-portal.git
+cd sec-school-portal
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# 2. Install PHP dependencies
+composer install
 
-## Security Vulnerabilities
+# 3. Install JS dependencies
+npm install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 4. Copy environment file and configure
+cp .env.example .env
+# Edit .env — set DB_DATABASE, DB_USERNAME, DB_PASSWORD
+
+# 5. Generate app key
+php artisan key:generate
+
+# 6. Run migrations
+php artisan migrate
+
+# 7. Seed initial data (grading scales, settings)
+php artisan db:seed
+
+# 8. Build frontend assets
+npm run build
+
+# 9. Start the server
+php artisan serve
+```
+
+The application will be available at `http://localhost:8000`.
+
+---
+
+## Environment Variables
+
+Key variables to configure in `.env`:
+
+```env
+APP_NAME="Divine Royal Int'l College"
+APP_URL=http://localhost
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=school_portal
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## User Roles
+
+| Role | Access |
+|---|---|
+| `admin` | Full system access |
+| `principal` | Admin-level access with principal designation |
+| `teacher` | Score entry, attendance, results for assigned subjects |
+
+---
+
+## Score Components
+
+**JSS (Junior Secondary School)**
+- 1st Weekly Exercise
+- Take Home Assignment
+- College Quiz
+- Project
+- 2nd Weekly Exercise
+- Take Home Assignment 2
+- Summary of Continuous Assessment
+- End of Term Examination
+
+**SSS (Senior Secondary School)**
+- Same components as JSS plus additional SSS-specific score fields
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Proprietary — developed for Divine Royal Int'l College Nkpor, Anambra State.
